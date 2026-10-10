@@ -2,7 +2,7 @@
 
 BookingMachine's public REST API. Use it to build custom booking flows, check availability, or pull review data.
 
-The widget uses this API internally — everything the widget does, you can do directly.
+The widget uses this API internally: everything the widget does, you can do directly.
 
 ---
 
@@ -50,10 +50,10 @@ Validation errors may include a `details` field:
 |------|---------|
 | `200` | OK |
 | `201` | Created (bookings, leads) |
-| `400` | Bad request — validation error |
+| `400` | Bad request: validation error |
 | `403` | CAPTCHA verification failed |
 | `404` | Business or resource not found |
-| `409` | Conflict — time slot no longer available |
+| `409` | Conflict: time slot no longer available |
 | `429` | Rate limit exceeded |
 | `500` | Server error |
 
@@ -82,7 +82,7 @@ When exceeded, the API returns HTTP `429`. Retry after 60 seconds.
 
 If the business has Turnstile enabled, the site key is returned in the `/config` response as `turnstileSiteKey`. Include the verified token as `turnstileToken` in the request body.
 
-If no token is provided, the request is still accepted — protection falls back to IP rate limiting.
+If no token is provided, the request is still accepted, and protection falls back to IP rate limiting.
 
 ---
 
@@ -99,7 +99,7 @@ Returns the full configuration for a business: services, pricing rules, branding
 | Name | In | Description |
 |------|----|-------------|
 | `slug` | path | Business slug |
-| `widget` | query | (optional) Widget config slug — returns filtered services for that widget |
+| `widget` | query | (optional) Widget config slug: returns filtered services for that widget |
 
 **Response**
 
@@ -181,9 +181,9 @@ Returns available time slots for a service.
 |------|----|-------------|
 | `slug` | path | Business slug |
 | `serviceId` | query | **Required.** Service ID to check |
-| `date` | query | Single date — `YYYY-MM-DD` |
-| `startDate` | query | Start of date range — `YYYY-MM-DD` |
-| `endDate` | query | End of date range — `YYYY-MM-DD` |
+| `date` | query | Single date, `YYYY-MM-DD` |
+| `startDate` | query | Start of date range, `YYYY-MM-DD` |
+| `endDate` | query | End of date range, `YYYY-MM-DD` |
 | `teamMemberId` | query | (optional) Filter by team member |
 
 Use either `date` alone, or `startDate` + `endDate` for a range.
@@ -251,7 +251,7 @@ Calculate a price quote. Runs the same pricing engine as the widget.
 | `addons` | string[] | Add-on keys to include |
 | `packageKey` | string \| null | Package key to apply |
 | `isRecurring` | boolean | Apply recurring discount if configured |
-| `customerInfo` | object | Optional — used for loyalty pricing |
+| `customerInfo` | object | Optional, used for loyalty pricing |
 | `turnstileToken` | string \| null | CAPTCHA token (if required) |
 
 **Response**
@@ -386,7 +386,7 @@ Returns published reviews for a business.
 
 | Name | In | Default | Description |
 |------|----|---------|-------------|
-| `slug` | path | — | Business slug |
+| `slug` | path | | Business slug |
 | `page` | query | `1` | Page number |
 | `limit` | query | `20` | Reviews per page (max 50) |
 

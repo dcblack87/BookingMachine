@@ -6,7 +6,7 @@ How to track BookingMachine events in your analytics tools.
 
 ## Why Standard Click Tracking Won't Work
 
-The widget runs inside a Shadow DOM. Standard "click any button" tag manager rules can't see elements inside a Shadow DOM — they're hidden from the outer document's event listeners and DOM queries.
+The widget runs inside a Shadow DOM. Standard "click any button" tag manager rules can't see elements inside a Shadow DOM: they're hidden from the outer document's event listeners and DOM queries.
 
 Instead, listen for the **custom events** that the widget dispatches. These bubble out of the Shadow DOM (`composed: true`) and are visible on `document`.
 
@@ -60,7 +60,7 @@ Instead, listen for the **custom events** that the widget dispatches. These bubb
 </script>
 ```
 
-Place these scripts anywhere after the gtag.js initialization — they don't need to be next to the widget embed.
+Place these scripts anywhere after the gtag.js initialization. They don't need to be next to the widget embed.
 
 ---
 
@@ -77,7 +77,7 @@ Add a Custom HTML tag (trigger: All Pages) with:
   document.addEventListener('bookkit:booking-confirmed', (e) => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'quotelab_booking_confirmed',
+      event: 'bookingmachine_booking_confirmed',
       booking_id: e.detail.bookingId,
       booking_value: e.detail.total,
       booking_service: e.detail.service,
@@ -87,14 +87,14 @@ Add a Custom HTML tag (trigger: All Pages) with:
   document.addEventListener('bookkit:quote-calculated', (e) => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'quotelab_quote_calculated',
+      event: 'bookingmachine_quote_calculated',
       quote_total: e.detail.total,
     });
   });
 
   document.addEventListener('bookkit:lead-submitted', () => {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'quotelab_lead_submitted' });
+    window.dataLayer.push({ event: 'bookingmachine_lead_submitted' });
   });
 </script>
 ```
@@ -103,7 +103,7 @@ Add a Custom HTML tag (trigger: All Pages) with:
 
 For each event:
 - Trigger type: **Custom Event**
-- Event name: `quotelab_booking_confirmed` (or `quotelab_quote_calculated`, `quotelab_lead_submitted`)
+- Event name: `bookingmachine_booking_confirmed` (or `bookingmachine_quote_calculated`, `bookingmachine_lead_submitted`)
 
 ### 3. Create GA4 Event tags
 
@@ -145,7 +145,7 @@ Place these after the Meta Pixel base code initializes.
 The full event list with their `detail` payloads:
 
 ```js
-const QUOTELAB_EVENTS = [
+const BOOKINGMACHINE_EVENTS = [
   'bookkit:config-loaded',      // { businessName }
   'bookkit:quote-calculated',   // { total, lineItems }
   'bookkit:step-changed',       // { step }
@@ -155,7 +155,7 @@ const QUOTELAB_EVENTS = [
   'bookkit:reviews-loaded',     // { avgRating, count }
 ];
 
-QUOTELAB_EVENTS.forEach((eventName) => {
+BOOKINGMACHINE_EVENTS.forEach((eventName) => {
   document.addEventListener(eventName, (e) => {
     // send to your analytics provider
     console.log(eventName, e.detail);

@@ -1,2 +1,5 @@
-# Auto detect text files and perform LF normalization
 * text=auto
+
+# Films and screenshots are made by the capture rig; treat as build artefacts
+docs/gifs/*.gif binary linguist-generated
+docs/screenshots/**/*.webp binary linguist-generated

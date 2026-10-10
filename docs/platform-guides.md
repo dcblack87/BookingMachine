@@ -11,10 +11,10 @@ How to add the BookingMachine widget to common website platforms.
 Add the script to your theme's footer:
 
 ```php
-function quotelab_embed() {
+function bookingmachine_embed() {
   echo '<script src="https://bookingmachine.io/embed.js" data-business="your-slug" async></script>';
 }
-add_action('wp_footer', 'quotelab_embed');
+add_action('wp_footer', 'bookingmachine_embed');
 ```
 
 ### Block Editor (Gutenberg)

@@ -22,11 +22,11 @@ Complete reference for the BookingMachine embed widget.
 
 | Attribute | Required | Default | Description |
 |-----------|----------|---------|-------------|
-| `data-business` | Yes | — | Your business slug (found in Settings → Business Profile) |
+| `data-business` | Yes | | Your business slug (found in Settings → Business Profile) |
 | `data-mode` | No | `inline` | Display mode: `inline`, `floating`, or `modal` |
-| `data-widget` | No | — | Widget config slug — filters to a specific set of services configured in the dashboard |
-| `data-primary-color` | No | — | Hex color to override the business's default primary color (e.g. `#1a6b3c`) |
-| `data-source` | No | — | Attribution string passed to bookings and leads (e.g. `homepage`, `landing-page`) |
+| `data-widget` | No | | Widget config slug: filters to a specific set of services configured in the dashboard |
+| `data-primary-color` | No | | Hex color to override the business's default primary color (e.g. `#1a6b3c`) |
+| `data-source` | No | | Attribution string passed to bookings and leads (e.g. `homepage`, `landing-page`) |
 
 ---
 
@@ -163,7 +163,7 @@ document.addEventListener('bookkit:booking-confirmed', (e) => {
 document.addEventListener('bookkit:quote-calculated', (e) => {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-    event: 'quotelab_quote_calculated',
+    event: 'bookingmachine_quote_calculated',
     quote_total: e.detail.total,
   });
 });
@@ -192,7 +192,7 @@ This renders a paginated list of reviews with star ratings and business response
 
 | Asset | Size (gzipped) | Notes |
 |-------|---------------|-------|
-| `embed.js` (loader) | < 3 KB | Blocking budget — loads async, defers widget creation |
+| `embed.js` (loader) | < 3 KB | Blocking budget: loads async, defers widget creation |
 | `widget.js` (main bundle) | < 40 KB | Lazy-loaded after loader runs |
 
 - **Stripe.js** is loaded lazily only when the customer reaches the payment step
