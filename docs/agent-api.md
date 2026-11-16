@@ -232,6 +232,7 @@ A business can switch AI assistants off altogether. Its answer is then `403 agen
 | `slot_unavailable` | 409 | The time has just been taken. Ask for the free times again. |
 | `agent_writes_off` | 403 | Booking without a key is not open for this business. Send the customer to its booking page. |
 | `agent_bookings_not_in_plan` | 403 | The business can be read but is booked on its own page. Give the price and the times, then use `details.bookingUrl`. |
+| `agent_bookings_off_for_business` | 403 | The business has not switched on bookings from assistants. Give the price and the times, then use `details.bookingUrl`. |
 | `agents_off_for_business` | 403 | The business does not take requests from AI assistants. Use `details.bookingUrl`. |
 | `rate_limited` | 429 | Wait for the number of seconds in `Retry-After`. |
 | `agent_platform_off` | 503 | The API is switched off for now. Try again later. |
