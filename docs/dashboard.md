@@ -19,8 +19,8 @@ Every screen below is from a demo business called Bright Focus Photography, fill
 
 <table>
   <tr>
-    <td width="50%"><img src="screenshots/run/overview.webp" alt="The dashboard overview: tiles for revenue, bookings, average ticket and customers, a second row for orders and the amount outstanding, then a month calendar beside a Needs Attention list"></td>
-    <td width="50%"><img src="screenshots/run/calendar.webp" alt="Bookings on the Calendar tab: October laid out as a month grid, each booking on its day with the time, the customer's first name and the team member"></td>
+    <td width="50%"><img src="screenshots/run/overview.webp" alt="The dashboard overview: tiles for revenue, bookings, new customers and the amount outstanding, above a month calendar of the schedule, a Needs attention list and a revenue chart"></td>
+    <td width="50%"><img src="screenshots/run/calendar.webp" alt="Bookings on the Calendar tab: November laid out as a month grid, each booking on its day with the time, the customer's first name and the team member"></td>
   </tr>
   <tr>
     <td>What has come in, what is owed and what needs a reply, for the period you choose.</td>
@@ -32,8 +32,8 @@ Every screen below is from a demo business called Bright Focus Photography, fill
 
 <table>
   <tr>
-    <td width="50%"><img src="screenshots/run/bookings.webp" alt="Bookings as a list: date and time, customer, service, staff, total, payment and status for each booking, with tabs for List, Calendar and Recurring and a Create Booking button"></td>
-    <td width="50%"><img src="screenshots/run/booking.webp" alt="One booking, for James Okafor: a Start Job button, the date, time, duration and team member, a price breakdown, the payment total and status, and places for photos and notes"></td>
+    <td width="50%"><img src="screenshots/run/bookings.webp" alt="Bookings as a list: date and time, customer, service, staff, payment, status and total for each booking, with tabs for List, Calendar and Recurring and a Create booking button"></td>
+    <td width="50%"><img src="screenshots/run/booking.webp" alt="One booking, for James Okafor: a Start job button, the date, time, duration and team member, a price breakdown, the payment total and status, and a place for photos"></td>
   </tr>
   <tr>
     <td>Filter by status, switch to the calendar, or add a booking taken by phone.</td>
@@ -43,23 +43,23 @@ Every screen below is from a demo business called Bright Focus Photography, fill
 
 - **Start and complete.** A booking moves from confirmed to in progress to completed. Completing it is what sends the review request.
 - **Change it.** Staff can move a booking to another time or another team member.
-- **Add your own.** A booking taken by phone or in person goes in through Create Booking.
+- **Add your own.** A booking taken by phone or in person goes in through Create booking.
 
 ## Customers
 
 <table>
   <tr>
-    <td width="50%"><img src="screenshots/run/customers.webp" alt="The Customers screen: sixteen customers, each with an email, a phone number, tags such as new and high-value, what they have spent and when they last booked"></td>
+    <td width="50%"><img src="screenshots/run/customers.webp" alt="The Customers screen: seventeen customers, each with an email, a phone number, what they have spent, how many bookings they have made and when they last booked"></td>
     <td>
       Nobody types a customer in. A booking, a quote or an enquiry on the form makes the record, and every later booking adds to it.<br><br>
-      Tags such as <strong>new</strong>, <strong>returning</strong> and <strong>high-value</strong> are worked out from what each customer has booked and spent.
+      Each record shows what the customer has spent and when they last booked. Tags are your own: add the ones that mean something to your business and filter by them.
     </td>
   </tr>
 </table>
 
 ## Getting paid
 
-- **Online, through Stripe.** Connect your own Stripe account and each service can take a deposit or the full amount when it is booked. The money goes to you.
+- **Online, through Stripe.** On a paid plan, each booking form can take a deposit or the full amount when a customer books. The money goes to your own Stripe account.
 - **Or not at all.** A form can take bookings with no payment, and you settle up on the day.
 - **Know what is owed.** Each booking shows what has been paid and what is outstanding, and the overview adds it up.
 
@@ -76,5 +76,7 @@ Plans that include online payments are on the [pricing page](https://bookingmach
 | [Team](https://bookingmachine.io/features/team-management) | Add team members and assign each booking to one of them |
 | [Locations](https://bookingmachine.io/features/multi-location) | Run more than one branch from one account |
 | [Documents](https://bookingmachine.io/features/professional-documents) | Agreements and policies a customer accepts when they book |
+
+Recurring bookings, vouchers, more team members, more locations and agreements a customer accepts when booking are on paid plans. The [pricing page](https://bookingmachine.io/pricing) lists what each plan includes.
 
 <p align="right"><a href="../README.md">Back to the tour →</a></p>

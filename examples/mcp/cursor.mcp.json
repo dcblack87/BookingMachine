@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "bookingmachine": {
+      "url": "https://mcp.bookingmachine.io/mcp"
+    }
+  }
+}

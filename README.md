@@ -16,6 +16,7 @@
   <a href="https://bookingmachine.io/features">Features</a> ·
   <a href="https://bookingmachine.io/pricing">Pricing</a> ·
   <a href="https://bookingmachine.io/help">Help</a> ·
+  <a href="https://bookingmachine.io/developers">Developers</a> ·
   <a href="https://bookingmachine.io/wordpress">WordPress</a> ·
   <a href="https://bookingmachine.io/wix">Wix</a> ·
   <a href="https://bookingmachine.io/blog">Blog</a>
@@ -27,7 +28,7 @@
 
 BookingMachine is booking, quoting and payments for local service businesses: detailers, cleaners, groomers, photographers, landscapers and anyone else who sells their time. You build your services and prices once. Customers then see a live price, pick a time and book, on your own website, from a link, from a QR code or on a free site BookingMachine hosts for you. After the job, a review request goes out without you lifting a finger.
 
-It runs at [bookingmachine.io](https://bookingmachine.io) and is free to start. This page is the tour. The step-by-step guides are in the [help centre](https://bookingmachine.io/help), and the [developer docs](#for-developers) for the embed and the API are in this repository.
+It runs at [bookingmachine.io](https://bookingmachine.io) and is free to start. This page is the tour. The step-by-step guides are in the [help centre](https://bookingmachine.io/help), and the [developer docs](#for-developers) for the embed, the API and AI assistants are in this repository.
 
 ## Build it. Share it. Get paid.
 
@@ -48,11 +49,11 @@ It runs at [bookingmachine.io](https://bookingmachine.io) and is free to start. 
     <td><strong>Share it</strong></td>
     <td>Paste one line into your website, send the link, print the QR code or switch on the hosted site.</td>
     <td>The same form wherever they find you, with nothing to install and no account to make.</td>
-    <td><a href="https://bookingmachine.io/features/widget">Widget</a> · <a href="https://bookingmachine.io/link">Link</a> · <a href="https://bookingmachine.io/microsite">Site</a></td>
+    <td><a href="https://bookingmachine.io/features/widget">Widget</a> · <a href="https://bookingmachine.io/link">Link</a> · <a href="https://bookingmachine.io/website">Site</a></td>
   </tr>
   <tr>
     <td><strong>Get paid</strong></td>
-    <td>Connect Stripe and choose a deposit or the full amount. Bookings, customers and money land in one dashboard.</td>
+    <td>On a paid plan, take a deposit or the full amount through Stripe. Bookings, customers and money land in one dashboard.</td>
     <td>A confirmation the moment they book, and a review request after the job.</td>
     <td><a href="https://bookingmachine.io/features/payments">Payments</a> · <a href="docs/dashboard.md">Tour</a></td>
   </tr>
@@ -71,9 +72,9 @@ It runs at [bookingmachine.io](https://bookingmachine.io) and is free to start. 
 
 <table>
   <tr>
-    <td width="33%"><img src="docs/screenshots/booking/services.webp" alt="The Bright Focus Photography booking page: a Book Now form listing Mini Session, Portrait Session and Branding Session, each with a from price and a length"></td>
-    <td width="33%"><img src="docs/screenshots/booking/quote.webp" alt="The Customize your quote step: session length set to 2 hours, a printed album ticked, and an estimated total with each line of the price listed under it"></td>
-    <td width="33%"><img src="docs/screenshots/booking/time.webp" alt="The Pick a date and time step: the chosen day with its free times as buttons and the times already taken struck through"></td>
+    <td width="33%"><img src="docs/screenshots/booking/services.webp" alt="The Bright Focus Photography booking page: a Book Now form headed Select a service, listing Mini Session from 150 dollars and Portrait Session from 300 dollars with a line about each"></td>
+    <td width="33%"><img src="docs/screenshots/booking/quote.webp" alt="The Choose your options step: session length set to 2 hours, location set to Studio, a printed album ticked under Add extras, and an estimated total of 630 dollars with each line of the price under it"></td>
+    <td width="33%"><img src="docs/screenshots/booking/time.webp" alt="The Pick a date and time step: Thursday, November 19 with its free times as buttons and 10:00 AM picked, above Back and Continue buttons"></td>
   </tr>
   <tr>
     <td>Every service shows its starting price and how long it takes.</td>
@@ -107,15 +108,15 @@ It runs at [bookingmachine.io](https://bookingmachine.io) and is free to start. 
 <script src="https://bookingmachine.io/embed.js" data-business="your-slug" async></script>
 ```
 
-![The share panel in Widget Setup with the booking link, the embed code and a QR code, then the form embedded on a photographer's own site, the same form on a phone, and a hosted site for a lawn care business](docs/gifs/share.gif)
+![The Embed dialog in Widget Setup with the embed code, the booking link and a QR code, then the form embedded on a photographer's own site, the same form on a phone, and a hosted site for a lawn care business](docs/gifs/share.gif)
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/screenshots/build/share.webp" alt="Share this widget, in Widget Setup: a booking link with a Copy link button, the embed code with Inline, Floating Bubble and Modal display choices, and a QR code with a Download PNG button"></td>
-    <td width="50%"><img src="docs/screenshots/build/widget-setup.webp" alt="Widget Setup: the widget name, description and type on the left, and a preview of the form on a sample page on the right"></td>
+    <td width="50%"><img src="docs/screenshots/build/share.webp" alt="The Embed dialog in Widget Setup: the embed code for HTML, Wix or WordPress with Inline, Bubble and Modal display choices and a Copy code button, the booking link with a Copy link button, and a QR code with a Download PNG button"></td>
+    <td width="50%"><img src="docs/screenshots/build/widget-setup.webp" alt="Widget Setup: the description and a choice of Booking, Order or Quote Only on the left, a live preview of the form on the right, and Share and Embed buttons at the top"></td>
   </tr>
   <tr>
-    <td>The link, the embed code and the QR code are all in one panel.</td>
+    <td>The embed code, the link and the QR code are all in one dialog.</td>
     <td>Name the form, choose how it behaves and see it before it goes live.</td>
   </tr>
 </table>
@@ -123,7 +124,7 @@ It runs at [bookingmachine.io](https://bookingmachine.io) and is free to start. 
 - **On your website.** Inline in the page, as a floating button, or in a pop-up. Guides for [WordPress, Wix, Squarespace, Webflow and plain HTML](docs/platform-guides.md).
 - **As a link.** A booking page of your own to put in a bio, a text or an email. [More on the booking link](https://bookingmachine.io/link).
 - **As a QR code.** For flyers, cards, vans and shop windows. It opens the same booking page.
-- **As a whole site.** A hosted site with your services, reviews and a Book Now button. [More on the hosted site](https://bookingmachine.io/microsite).
+- **As a whole site.** A hosted site with your services, reviews and a Book Now button. [More on the hosted site](https://bookingmachine.io/website).
 
 ## Run the day
 
@@ -131,9 +132,9 @@ It runs at [bookingmachine.io](https://bookingmachine.io) and is free to start. 
 
 <table>
   <tr>
-    <td width="33%"><img src="docs/screenshots/run/overview.webp" alt="The dashboard overview: tiles for revenue, bookings, average ticket, customers and the amount outstanding, above a month calendar and a list of things that need attention"></td>
+    <td width="33%"><img src="docs/screenshots/run/overview.webp" alt="The dashboard overview: tiles for revenue, bookings, new customers and the amount outstanding, above a month calendar of the schedule, a Needs attention list and a revenue chart"></td>
     <td width="33%"><img src="docs/screenshots/run/calendar.webp" alt="Bookings on the Calendar tab: a month grid with each booking shown on its day with the time, the customer and the team member"></td>
-    <td width="33%"><img src="docs/screenshots/run/booking.webp" alt="One booking: the customer and service at the top with a Start Job button, then the date, time and team member, the price breakdown and the payment status"></td>
+    <td width="33%"><img src="docs/screenshots/run/booking.webp" alt="One booking: the customer and service at the top with a Start job button, then the date, time and team member, the price breakdown and the payment status"></td>
   </tr>
   <tr>
     <td>The overview: money in, money owed and what needs attention.</td>
@@ -141,9 +142,9 @@ It runs at [bookingmachine.io](https://bookingmachine.io) and is free to start. 
     <td>A booking holds everything about one job.</td>
   </tr>
   <tr>
-    <td width="33%"><img src="docs/screenshots/run/bookings.webp" alt="Bookings as a list: date and time, customer, service, staff, total, payment and status for each, with a Create Booking button"></td>
-    <td width="33%"><img src="docs/screenshots/run/customers.webp" alt="The Customers screen: each customer with their email, phone, tags such as new and high-value, what they have spent and when they last booked"></td>
-    <td width="33%"><img src="docs/screenshots/build/hours.webp" alt="Business Hours in settings: a switch and opening and closing times for each day of the week"></td>
+    <td width="33%"><img src="docs/screenshots/run/bookings.webp" alt="Bookings as a list: date and time, customer, service, staff, payment, status and total for each, with a Create booking button"></td>
+    <td width="33%"><img src="docs/screenshots/run/customers.webp" alt="The Customers screen: each customer with their email, phone, what they have spent, how many bookings they have made and when they last booked"></td>
+    <td width="33%"><img src="docs/screenshots/build/hours.webp" alt="Business Hours in settings: a switch for each day of the week, with opening and closing times for the days that are open"></td>
   </tr>
   <tr>
     <td>The same bookings as a list, with payment and status.</td>
@@ -164,8 +165,8 @@ Also in the dashboard: [quotes](https://bookingmachine.io/features/quotes) a cus
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/screenshots/reviews/reviews-page.webp" alt="The public reviews page for Evergreen Lawn Care: a five-star average, the count of reviews by star, and a verified review with photos from the job"></td>
-    <td width="50%"><img src="docs/screenshots/reviews/dashboard.webp" alt="The Reviews screen in the dashboard: the average rating and star counts, filters by star and by needs response, and the newest review with its photos and video"></td>
+    <td width="50%"><img src="docs/screenshots/reviews/reviews-page.webp" alt="The public reviews page for Evergreen Lawn Care: the count of reviews by star and three verified five-star reviews, each naming the service it was for"></td>
+    <td width="50%"><img src="docs/screenshots/reviews/dashboard.webp" alt="The Reviews screen in the dashboard: the average rating and star counts, filters by star and by needs response, and the newest reviews with a Reply link under each"></td>
   </tr>
   <tr>
     <td>Reviews are public on a page of their own.</td>
@@ -177,7 +178,7 @@ Also in the dashboard: [quotes](https://bookingmachine.io/features/quotes) a cus
 
 ## A site of your own
 
-**No website? BookingMachine hosts one.** Each business gets a site with its services, its reviews, a gallery, a contact page and a Book Now button that opens the same booking form. It can run on your own domain.
+**No website? BookingMachine hosts one.** Each business gets a site with its services, its reviews, a gallery, a contact page and a Book Now button that opens the same booking form. On a paid plan it can run on your own domain.
 
 <table>
   <tr>
@@ -198,6 +199,10 @@ Any business that sells a service by appointment, by quote or by the job. There 
 
 ## For developers
 
+There are two ways in. Put the booking form on a website, or let software book for a customer.
+
+### The form on your site
+
 The booking form is a web component loaded by one script tag. It fires events you can listen for, takes its colours from CSS custom properties, and talks to a public REST API you can call yourself.
 
 | Guide | What it covers |
@@ -207,6 +212,55 @@ The booking form is a web component loaded by one script tag. It fires events yo
 | [Platform guides](docs/platform-guides.md) | WordPress, Wix, Squarespace, Webflow and plain HTML |
 | [Analytics](docs/analytics.md) | Google Analytics, Google Tag Manager, Meta Pixel and your own tracking |
 | [API reference](docs/api-reference.md) | The public REST API: endpoints, shapes, errors and rate limits |
+
+### AI assistants and agents
+
+**An assistant can quote the real price, not a guess.** The Agent API gives an AI assistant, a phone receptionist or a chat agent what the booking form gives a person: the business's services, the price for this customer's job worked out by the business's own pricing rules, the free times, and a way to ask for the booking. The same operations are tools on an MCP server.
+
+No API key is needed to try it. This runs as written, against a practice business:
+
+```bash
+curl -X POST https://api.bookingmachine.io/v1/businesses/fresh-start-cleaning/quotes \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "serviceIds": ["d40b821a-61d4-4a08-9378-03b00041cad5"],
+    "answers": { "bedrooms": "three", "bathrooms": "two" }
+  }'
+```
+
+```json
+{
+  "data": {
+    "currency": "GBP",
+    "total": 187.2,
+    "lineItems": [
+      { "label": "Standard Clean", "amount": 120, "type": "service" },
+      { "label": "Bedrooms: 3 Bedrooms", "amount": 36, "type": "multiplier" },
+      { "label": "Bathrooms: 2 Baths", "amount": 31.2, "type": "multiplier" }
+    ],
+    "deposit": 46.8,
+    "durationMinutes": 120
+  }
+}
+```
+
+![A terminal session against the practice business: its profile with what an assistant may do, the price for a three-bedroom, two-bathroom clean worked out line by line to 187.20 pounds, and the free times for a day](docs/gifs/agent.gif)
+
+To connect an assistant instead, add the MCP server:
+
+```bash
+claude mcp add --transport http bookingmachine https://mcp.bookingmachine.io/mcp
+```
+
+An agent never commits a person to a booking. When it asks for one, the customer gets an email with a Confirm button, and the booking is made when they press it.
+
+| Guide | What it covers |
+| --- | --- |
+| [Agent API](docs/agent-api.md) | Price a job and ask for a booking in six calls, the sandbox, refusals and limits |
+| [MCP server](docs/mcp.md) | Connect an assistant, the tools it gets, and a prompt to start from |
+| [Examples](examples) | A script that runs the six calls against the sandbox, and MCP configs for Claude Code and Cursor |
+| [Developer docs](https://bookingmachine.io/developers) | The full documentation, with the API reference drawn from the live OpenAPI document |
+| [For business owners](https://bookingmachine.io/agents) | What it means for a business that AI assistants can read and book it, and the switch that turns it off |
 
 Found something wrong in a guide? [Open an issue](https://github.com/dcblack87/BookingMachine/issues).
 
@@ -224,7 +278,7 @@ Plans and what each includes are on the [pricing page](https://bookingmachine.io
 
 **Will it work on my site builder?** The embed is plain HTML, so it works anywhere you can paste a snippet. There is a plugin for WordPress, an app for Wix and a guide for Squarespace and Webflow.
 
-**How do I get paid?** Through Stripe, into your own account. You choose whether a booking takes a deposit or the full amount, or no payment at all.
+**How do I get paid?** Through Stripe, into your own account, on a paid plan. You choose whether a booking takes a deposit or the full amount, or no payment at all.
 
 **Can customers get a quote without booking?** Yes. A form can be set to take bookings, take orders or give a quote only.
 

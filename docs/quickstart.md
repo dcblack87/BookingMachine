@@ -6,53 +6,60 @@ Get a client's BookingMachine widget live in about 10 minutes.
 
 ## 1. Create an account
 
-Go to [bookingmachine.io](https://bookingmachine.io) and sign up. You can create the account yourself and transfer ownership later, or have the client do it directly.
+Go to [bookingmachine.io](https://bookingmachine.io) and sign up with a name, business name, email and password, or with Google.
+
+A short setup wizard follows. It asks for the country, timezone and currency, the first service, and opening hours, then publishes the booking page.
 
 ---
 
 ## 2. Set up the business profile
 
-In the dashboard, go to **Settings → Business Profile** and fill in:
+In the dashboard:
 
-- Business name and address
-- Timezone (critical: all availability is computed in this timezone)
-- Primary color (used as the widget's accent color)
-- Logo (optional)
+- **Settings → General**: business name, contact details, timezone, country, currency, and the address and service area
+- **Settings → Brand**: logo and brand colors
+
+The timezone is critical: all availability is computed in it.
 
 ---
 
-## 3. Review services and pricing
+## 3. Add services and pricing
 
-BookingMachine pre-configures a set of services based on the business type selected at signup. Go to **Services** to:
+A new account has no pre-made services. The setup wizard starts you with one, and you add the rest in the dashboard:
 
-- Enable or disable services
-- Adjust base prices
-- Add pricing dimensions (e.g. vehicle size, property square footage)
-- Add add-ons and packages
+- **Services**: add services, set base prices, switch a service on or off
+- **Price variables**: the options that change a price (e.g. vehicle size, property square footage)
+- **Add-ons**: optional extras
 
 Live pricing is calculated in the widget as the customer makes selections, with no server round-trip.
 
 ---
 
-## 4. Connect Stripe (or skip)
+## 4. Set up payments (or skip)
 
-Go to **Settings → Payments** and click **Connect with Stripe**. This starts a Stripe Express onboarding flow, which takes about 5 minutes.
+Taking payment in the widget needs three things:
 
-**If you skip this step**, the widget runs in lead-capture mode: customers can still get a quote and submit their contact info, but no payment is collected at booking. You can add Stripe later without changing anything on the website.
+1. **A paid plan.** The free plan does not include payments; **Settings → Payments** shows an upgrade screen instead.
+2. **An approved application.** On a paid plan, fill in the short application on **Settings → Payments**. It is reviewed by hand, usually within a business day, and you are emailed the result.
+3. **A Stripe account.** Once approved, **Connect with Stripe** appears on the same page and starts Stripe's onboarding.
+
+Then switch on payment collection for the widget on the **Widget** page.
+
+**If you skip this step**, the widget still takes real bookings: customers get a price, pick a time and book, and no payment is collected. Bookings work as normal while an application is under review. You can add payments later without changing anything on the website.
 
 ---
 
-## 5. Find the business slug
+## 5. Get the embed code
 
-Go to **Settings → Business Profile**. The slug is shown under the business name. It looks like `acme-detailing` or `sunrise-lawn-care`.
+Open the **Widget** page and click **Embed**. The dialog shows the snippet with the business slug and widget already filled in, plus the booking link.
 
-You'll use this in the embed script.
+The slug looks like `acme-detailing` or `sunrise-lawn-care`. It is also the last part of the booking link (`bookingmachine.io/book/acme-detailing`). Renaming the business changes the slug, so copy the snippet again after a rename.
 
 ---
 
 ## 6. Add the embed script
 
-Paste this snippet into the client's website where you want the widget to appear:
+Paste the snippet into the client's website where you want the widget to appear:
 
 ```html
 <script
@@ -62,13 +69,13 @@ Paste this snippet into the client's website where you want the widget to appear
 ></script>
 ```
 
-Replace `your-slug` with the slug from step 5.
+Replace `your-slug` with the slug from step 5, or use the snippet from the Embed dialog as it is.
 
-The script is ~3KB and loads the widget bundle (~40KB) lazily. It won't block page rendering.
+The script is about 3 KB gzipped and loads the widget bundle (about 63 KB gzipped) lazily. It won't block page rendering.
 
 **Default behavior:** the widget renders inline at the script tag's location.
 
-For floating or modal modes, see [widget-reference.md](widget-reference.md#display-modes).
+For floating or modal modes, see [widget-reference.md](widget-reference.md#display-modes). For WordPress, Wix and other site builders, see [platform-guides.md](platform-guides.md).
 
 ---
 
@@ -79,7 +86,7 @@ For floating or modal modes, see [widget-reference.md](widget-reference.md#displ
 3. Get a quote and confirm the price matches what's configured in the dashboard
 4. Pick a date and time
 5. Fill in customer info
-6. Complete a test payment (use Stripe test card `4242 4242 4242 4242`)
+6. Complete the booking
 7. Confirm the booking appears in the dashboard under **Bookings**
 8. Confirm the customer receives a confirmation email
 
@@ -87,25 +94,17 @@ For floating or modal modes, see [widget-reference.md](widget-reference.md#displ
 
 ## 8. Optional next steps
 
-**Custom theme color:**
-```html
-<script
-  src="https://bookingmachine.io/embed.js"
-  data-business="your-slug"
-  data-primary-color="#1a6b3c"
-  async
-></script>
-```
+**Colors and design:** Set the logo and brand colors in **Settings → Brand** and the form's design in **Widget Setup** on the Widget page. Every embed picks the changes up; the snippet stays the same. The `data-primary-color` attribute is only a fallback for a business with no brand color saved, so it does not change the color of a normal account.
 
 **Choose a display mode:**
 ```html
-<!-- Floating button in the corner -->
+<!-- Floating Book Now button in the corner -->
 <script ... data-mode="floating" async></script>
 
-<!-- Opens in a modal -->
+<!-- Book Now button where the snippet is pasted, opening a popup -->
 <script ... data-mode="modal" async></script>
 ```
 
 **Track bookings in GA4:** See [analytics.md](analytics.md).
 
-**Multiple widgets on one page:** Use `data-widget` to target a specific widget configuration created in the dashboard.
+**More than one widget:** Use `data-widget` to load a specific widget created in the dashboard. Without it the primary widget loads.

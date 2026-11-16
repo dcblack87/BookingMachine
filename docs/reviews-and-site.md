@@ -6,12 +6,12 @@
 
 <p align="center">
   <a href="https://bookingmachine.io/reviews">Reviews</a> ·
-  <a href="https://bookingmachine.io/microsite">Hosted site</a> ·
+  <a href="https://bookingmachine.io/website">Hosted site</a> ·
   <a href="https://bookingmachine.io/link">Booking link</a> ·
   <a href="../README.md">Back to the tour</a>
 </p>
 
-Reviews are how a local business gets its next customer, and most never get asked for. BookingMachine asks every time. When a job is marked complete, the customer is emailed a request, their review lands in the dashboard, and it shows on a public page and anywhere you embed the reviews widget.
+Reviews are how a local business gets its next customer, and most never get asked for. BookingMachine asks for you. When a job is marked complete, the customer is emailed a request, their review lands in the dashboard, and it shows on a public page and anywhere you embed the reviews widget.
 
 ![A job is started and marked complete in the dashboard, the review request email the customer receives, the public reviews page with the new review, the reviews widget on another site, and the Reviews screen in the dashboard](gifs/reviews.gif)
 
@@ -33,8 +33,8 @@ Every screen below is from a demo business called Evergreen Lawn Care, filled wi
 
 <table>
   <tr>
-    <td width="50%"><img src="screenshots/reviews/dashboard.webp" alt="The Reviews screen in the dashboard: a note that requests are sent one day after the job, the average rating and star counts, filters by star and by needs response, and the newest review with its photos and video"></td>
-    <td width="50%"><img src="screenshots/reviews/reviews-page.webp" alt="The public reviews page for Evergreen Lawn Care: a five-star average over four reviews and a verified review from Maria A. with three photos from the job"></td>
+    <td width="50%"><img src="screenshots/reviews/dashboard.webp" alt="The Reviews screen in the dashboard: a note that requests are sent one day after the job, the average rating and star counts, filters by star and by needs response, and the newest reviews with a Reply link under each"></td>
+    <td width="50%"><img src="screenshots/reviews/reviews-page.webp" alt="The public reviews page for Evergreen Lawn Care: the count of reviews by star, verified five-star reviews from Sam P., Lena F. and Owen B., and a Book Now button"></td>
   </tr>
   <tr>
     <td>Read, reply and publish. A filter shows the reviews still waiting for a reply.</td>
@@ -63,6 +63,6 @@ A business with no website still needs somewhere to send people. The hosted site
 
 - **Made from the dashboard.** Change a service or get a new review and the site changes with it.
 - **Book Now on every page.** It opens the same booking form as everywhere else.
-- **On your own domain.** The site can answer on a domain you own.
+- **On your own domain.** On a paid plan the site can answer on a domain you own.
 
 <p align="right"><a href="../README.md">Back to the tour →</a></p>
