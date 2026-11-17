@@ -201,7 +201,7 @@ Who you are decides what a booking request does:
 | No key | A third party: an assistant, a marketplace, a receptionist service | Answers `202`. The customer is emailed a Confirm button, and the booking is made when they press it |
 | The business's own key | The business | Answers `201`. The booking is made at once |
 
-A business makes its key in its dashboard, under Settings → AI agents & API, and chooses what the key may do. It is sent as `Authorization: Bearer <key>`. Keys are being opened to businesses in stages; the [API keys guide](https://bookingmachine.io/developers/api-keys) has the details.
+A business makes its key in its dashboard, under Settings → API & webhooks, and chooses what the key may do. It is sent as `Authorization: Bearer <key>`. Keys are being opened to businesses in stages; the [API keys guide](https://bookingmachine.io/developers/api-keys) has the details.
 
 So an agent needs no account to quote and to ask for a booking, and a business that wants its own software to book straight in gives that software a key.
 
@@ -214,9 +214,11 @@ Change the slug. Nothing else in your code changes.
 | What | Today |
 | --- | --- |
 | Profile, services, requirements, quotes, free times, reviews | Open for every business that has not switched AI assistants off |
-| Holds and booking requests without a key | Open in the sandbox. For other businesses they are being opened in stages; until then the answer is `403 agent_writes_off` |
+| Holds and booking requests without a key | Open in the sandbox, and for every business that has switched on bookings from AI assistants. Each business chooses; `capabilities.bookings` on its profile says which |
 
 So read `capabilities` on the business's profile. When `bookings` is `false`, give the customer the price and the free times, then send them to `bookingUrl` to finish.
+
+A business that has not switched bookings on answers `403 agent_bookings_off_for_business`, and one whose plan does not include them answers `403 agent_bookings_not_in_plan`. Both carry `details.bookingUrl`.
 
 A business can switch AI assistants off altogether. Its answer is then `403 agents_off_for_business`, with `details.bookingUrl` to send the customer to.
 

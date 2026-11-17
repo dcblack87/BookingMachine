@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.dcblack87/bookingmachine",
+  "title": "BookingMachine",
+  "description": "Get a real price, find a free time and ask to book a local service business.",
+  "websiteUrl": "https://bookingmachine.io/developers",
+  "repository": {
+    "url": "https://github.com/dcblack87/BookingMachine",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.bookingmachine.io/mcp"
+    }
+  ]
+}
