@@ -201,7 +201,7 @@ Who you are decides what a booking request does:
 | No key | A third party: an assistant, a marketplace, a receptionist service | Answers `202`. The customer is emailed a Confirm button, and the booking is made when they press it |
 | The business's own key | The business | Answers `201`. The booking is made at once |
 
-A business makes its key in its dashboard, under Settings → API & webhooks, and chooses what the key may do. It is sent as `Authorization: Bearer <key>`. Keys are being opened to businesses in stages; the [API keys guide](https://bookingmachine.io/developers/api-keys) has the details.
+A business makes its key in its dashboard, under Settings → API & webhooks, and chooses what the key may do. It is sent as `Authorization: Bearer <key>`. Keys are on plans that include API access; the [API keys guide](https://bookingmachine.io/developers/api-keys) has the details.
 
 So an agent needs no account to quote and to ask for a booking, and a business that wants its own software to book straight in gives that software a key.
 
